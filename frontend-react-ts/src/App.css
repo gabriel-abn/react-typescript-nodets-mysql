@@ -1,0 +1,12 @@
+.App {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.items {
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+}
