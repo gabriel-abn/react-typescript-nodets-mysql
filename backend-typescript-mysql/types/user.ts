@@ -1,17 +1,9 @@
 export interface User {
-    userID: number;
-    userLogin: string;
-    userPassword: string;
-    userRecEmail: string;
-    userType: number;
-}
-
-export interface Client extends User {
-    clientName: string;
-    clientPayment?: string;
-}
-
-export interface Employee extends User {
-    employeeName: string;
-    employeeRep: number;
+    user_id: number;
+    user_nome_perfil: string;
+    user_nome: string;
+    user_email: string;
+    user_senha: string;
+    user_endereco: string;
+    user_telefone: string;
 }

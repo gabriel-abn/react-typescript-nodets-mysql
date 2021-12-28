@@ -1,20 +1,22 @@
-import { User, Client, Employee } from "../types/user";
+import { User } from "../types/user";
 import { db } from "../db";
 import { OkPacket, RowDataPacket } from "mysql2";
 
-export const create = (user: User, callback: Function) => {
+const create = (user: User, callback: Function) => {
     const queryString =
-        "INSERT INTO db_user (user_id, user_login,user_password,user_rec_email,user_type) VALUES (?,?,?,?,?);";
+        "INSERT INTO perfil (id, nome_perfil, nome, email, senha, endereco, telefone) VALUES (?,?,?,?,?,?,?);";
 
     console.log("db - user: " + user);
     db.query(
         queryString,
         [
-            user.userID,
-            user.userLogin,
-            user.userPassword,
-            user.userRecEmail,
-            user.userType,
+            user.user_id,
+            user.user_nome,
+            user.user_nome_perfil,
+            user.user_email,
+            user.user_senha,
+            user.user_endereco,
+            user.user_telefone,
         ],
         (err, result) => {
             if (err) {
@@ -27,3 +29,9 @@ export const create = (user: User, callback: Function) => {
         }
     );
 };
+
+const UserControler = {
+    create,
+};
+
+export default UserControler;
